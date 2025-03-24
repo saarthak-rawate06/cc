@@ -1,0 +1,49 @@
+Microsoft Azure
+
+visit the website -> https://portal.azure.com/#home
+
+1. hover on Virtual Machine -> Create->Azure Virtual Machine
+
+2. in basics 
+	
+	Res grp->create new-> tyith
+
+	Virtual Machine Name->prac 1
+
+	Region-> Asia Pacific Central India
+
+	Next:Disks
+
+3.in disks
+	
+	no changes here
+	Next: Networking
+
+4.in Networking
+	
+	no changes here
+	Next:Management
+
+5.in Management
+	
+	no changes here
+	Next:Monitoring
+
+6.in Monitoring
+
+	no changes here
+	Next:Advanced
+
+7.in Advanced
+
+	no changes here
+	Next:Tags
+
+8.in Tags
+
+	name: tyith
+	value: 123456789
+	Resource: Virtual Machine
+
+9. now cross check everything by showing it to MAM and ask to proceed for Review+create
+	
