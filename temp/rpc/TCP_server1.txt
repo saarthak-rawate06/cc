@@ -1,0 +1,58 @@
+import java.io.*; 
+import java.net.*; 
+public class TCP_server1 { 
+  public static void main(String[] args) { 
+         System.out.println("Sairaj,Roll noL:-40"); 
+        try  
+        { 
+            int port = 8888; 
+            ServerSocket ss = new ServerSocket(port); 
+            System.out.println("Waiting for Client ..."); 
+ 
+            Socket s = ss.accept(); 
+            System.out.println("Connection is done ..."); 
+             
+            while(true) 
+            { 
+                BufferedReader br = new BufferedReader(new            
+InputStreamReader(s.getInputStream())); 
+                int n1 = Integer.parseInt(br.readLine()); 
+                int n2 = Integer.parseInt(br.readLine()); 
+                String sign = br.readLine(); 
+ 
+                System.out.println("Data From Client :"); 
+                System.out.println("n1="+n1); 
+                System.out.println("n2="+n2); 
+                System.out.println("sign="+sign); 
+                int ans = 0; 
+                if(sign.equals("+")) 
+                { 
+                    ans = n1 + n2; 
+                } 
+                else if(sign.equals("-")) 
+                { 
+                    ans = n1 - n2; 
+                } 
+                else if(sign.equals("*")) 
+                { 
+                    ans = n1 * n2; 
+                } 
+                else if(sign.equals("/")) 
+                { 
+                    ans = n1 / n2; 
+                } 
+                else  
+                { 
+                    ans = 0; 
+                } 
+ 
+                String res = "Answer ="+ans; 
+ 
+                PrintWriter pw = new PrintWriter(new OutputStreamWriter(s.getOutputStream())); 
+                pw.println(res); 
+                pw.flush(); 
+            } 
+ 
+        }  
+        catch (Exception ex)  
+        { System.out.println("Error :" + ex); }}} 

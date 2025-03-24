@@ -1,0 +1,41 @@
+import java.io.*; 
+import java.net.*; 
+public class UDP_server { 
+ 
+   
+    public static void main(String[] args) { 
+        try  
+        { 
+            int port = 1234; 
+            DatagramSocket ds = new DatagramSocket(port); 
+            System.out.println("Waiting for Client ..."); 
+             
+            while(true) 
+            { 
+             
+                byte b[] = new byte[1024]; 
+                DatagramPacket dp1 = new DatagramPacket(b, b.length); 
+                ds.receive(dp1); 
+                String str = new String(dp1.getData(),0,dp1.getLength()); 
+                System.out.println("Request From Client="+str); 
+ 
+                if(str.equals("end")) 
+                { 
+                    System.exit(0); 
+                } 
+                int num = Integer.parseInt(str); 
+                int f = 1; 
+                for(int i=1;i<=num;i++) 
+                { 
+                    f = f * i; 
+                } 
+                String res = "Factorial="+f; 
+ 
+                byte b1[] = new byte[1024]; 
+                b1 = res.getBytes(); 
+                InetAddress addr1 = InetAddress.getByName(null); 
+                DatagramPacket dp2 = new DatagramPacket(b1, b1.length,addr1,5678); 
+                ds.send(dp2); }} 
+  
+        catch (Exception e)  
+        { System.out.println("Error=" + e); }}} 

@@ -1,0 +1,56 @@
+WEB SERVICE Calci
+
+new proj
+
+java web
+
+web application
+
+name
+
+finish
+
+right click on proj
+
+new web service
+
+name
+
+org.me in package
+
+finish
+
+code
+@WebMethod(operationName = "Calculator")  
+    public String calc(@WebParam(name = "num1") int num1,@WebParam(name="Operator") String 
+    txt,@WebParam(name = "num2") int num2) {  
+        switch(txt){             
+    case "+":  
+                int add = num1 + num2;                 
+    return "Addition:" + add;  
+                  
+              
+    case "-":  
+                int sub = num1 - num2;                 
+    return "Subtraction:" + sub;   
+                  
+    case "*":  
+                int mul = num1 * num2;                 
+    return "Multiplication:" + mul;  
+                  
+    case "/":  
+                int div = num1 / num2;                 
+    return "Division:" + div;  
+                  
+    default:  
+    return "Enter Valid Input"; }  }
+
+
+clean and build
+
+deploy
+
+test web service
+
+wsdl copy path
+

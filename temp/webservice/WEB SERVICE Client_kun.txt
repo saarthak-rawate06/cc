@@ -1,0 +1,49 @@
+WEB SERVICE Client_kun
+
+new proj 
+
+java web
+
+web application
+
+name
+
+finish
+
+right click
+
+new web service client
+
+wsdl link paste
+
+finish
+
+right click 
+
+create java class
+
+give name
+
+tyit package
+
+finish
+
+code and add reference 
+public static void main(String[]args) 
+    {
+     Scanner sc=new Scanner(System.in);         
+        System.out.println("Enter num 1:");         
+        int num1=sc.nextInt();  
+        System.out.println("Enter num 2");         
+        int num2=sc.nextInt();  
+        System.out.println("Enter operator ");  
+        String txt=sc.next();
+        org.me.Calci_Service service = new org.me.Calci_Service(); 	#reference
+        org.me.Calci port = service.getCalciPort();			#reference
+        System.out.println("Output is->"+port.calculator(num1, txt, num2));          
+        sc.close();  }
+
+
+clean and build
+
+run file

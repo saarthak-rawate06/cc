@@ -1,0 +1,35 @@
+ import java.io.*; 
+import java.net.*; 
+public class UDP_client { 
+public static void main(String[] args) { 
+        try  
+        { 
+            int port = 5678; 
+            DatagramSocket ds = new DatagramSocket(port); 
+             
+            while(true) 
+            {      
+                System.out.println("Enter The Number :"); 
+                BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
+                String str = br.readLine();               
+ 
+                byte b[] = new byte[1024]; 
+                b = str.getBytes(); 
+                InetAddress addr = InetAddress.getByName(null); 
+                DatagramPacket dp1 = new DatagramPacket(b, b.length,addr,1234); 
+                ds.send(dp1); 
+                 
+                if(str.equals("end")) 
+                { 
+                    System.exit(0); 
+                } 
+ 
+                byte b1[] = new byte[1024]; 
+                DatagramPacket dp2 = new DatagramPacket(b1, b1.length); 
+                ds.receive(dp2); 
+                String res = new String(dp2.getData(),0,dp2.getLength()); 
+ 
+                System.out.println("Response From Server : " +res);
+       } }  
+        catch (Exception e)  
+        { System.out.println("Error=" + e);  }}} 
