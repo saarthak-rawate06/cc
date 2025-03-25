@@ -13,7 +13,7 @@ byte[] data = null;
 for(;;) 
 { 
 Thread.sleep(10000); System.out.println("Sending ");  
-String str = ("This is Sairaj Calling ");  
+String str = ("Optimus Prime:Calling All Autobots ");  
 data= str.getBytes(); 
 address = InetAddress.getByName(null); 
 packet = new DatagramPacket(data, str.length(),address,PORT); 
