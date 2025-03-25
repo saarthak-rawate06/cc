@@ -1,0 +1,38 @@
+ESXI
+
+Create new vm
+Custom
+Next
+Workstation 9x
+Next
+Find esxi iso file
+Next
+No of processor 4
+No of cores 2
+Ram 16gb
+Next
+Use bridge network
+Next
+Mext
+Create new vitrual disk
+Next
+Max disc size 60 and store vd as single file
+Next 
+Next
+Custom hardware
+Processor -> untick
+Next
+F2->custom hardware->Configure management network->172.23.0.29
+Finish 
+Install
+Vsphere
+Next
+Windows ->vsphere->next ->restart
+
+Start vshpere->paste ip address->password ->login
+
+Click on ipaddress->->new virtual machine->Typical->Name->Windows->VM Network, E1000
+
+Disk->datastore1->54.1->40gb
+
+Finish
