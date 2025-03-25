@@ -29,6 +29,7 @@ tyit package
 finish
 
 code and add reference 
+import java.util.Scanner; (write after the package)
 public static void main(String[]args) 
     {
      Scanner sc=new Scanner(System.in);         
