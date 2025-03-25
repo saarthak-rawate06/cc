@@ -1,0 +1,13 @@
+HYPERV
+
+In windows search windows feature select Hyper V and restart 
+Open hyper V in windows
+Right click on hyper V manager then connect to server 
+Select local computer 
+Click on quick create
+Select ubuntu-18 & click on create a new virtual machine.
+start
+English 
+English 
+India
+Then perform basic ubuntu installation and then your hyper V prac is completed
